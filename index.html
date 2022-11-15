@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADE</title>
+</head>
+<style>
+    .convertor {
+        background-color: blueviolet;
+        min-height: 800px;
+        border: 10px solid black;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        color: yellow;
+    }
+</style>
+<body>
+
+    <div class="convertor">
+    <h1>What's your Grade</h1>
+     <form onsubmit="Gradechecker(); return false">
+        <label for="percentage">Write your percentage here!</label>
+    <input type="number" id="percentage">
+
+    <input type="submit" value="Convert into Grade">
+
+     </form>
+    <p id="result"></p>
+    </div>
+
+    <script>
+
+    function Gradechecker() {
+        let percentage= +document.querySelector("#percentage").value;
+        if (percentage > 100) {
+            document.querySelector("#result")
+            .innerHTML = "Dear Academic freak! Its impossible to attain more than 100 percentage. Kindly enter the right one";
+        }
+    else if (percentage > 80) {
+        document.querySelector("#result")
+        .innerHTML = "Congrats! You got A1 Grade";
+    }
+    else if (percentage > 70) {
+        document.querySelector("#result")
+        .innerHTML = "Congrats! You got A Grade";
+    }
+    else if (percentage > 60) {
+        document.querySelector("#result")
+        .innerHTML = "Congrats! You got B Grade! Have potential to acheive A grade!";
+    }
+    else if (percentage > 50) {
+        document.querySelector("#result")
+        .innerHTML = "You got C Grade! Need to improve your grades to prove yourself!";
+    }
+    else if (percentage > 1 && percentage < 49) {
+        document.querySelector("#result") 
+        .innerHTML = "Need to give more time to studies to pass the exam!";
+    }
+    else {
+        document.querySelector("#result")
+        .innerHTML = "Its not possible! We are sure you have achieved more than the entered number!";
+    } 
+    }
+
+</script>
+</body>
+</html>
